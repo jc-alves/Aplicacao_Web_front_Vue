@@ -1,0 +1,30 @@
+{
+  "name": "front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "publish": "npm run build && cd dist && copy index.html 200.html && surge --domain rccfloriano.surge.sh"
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.20.0",
+    "axios": "^0.26.0",
+    "bootstrap-vue": "^2.21.2",
+    "core-js": "^3.6.5",
+    "fix": "^0.0.6",
+    "global": "^4.4.0",
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0"
+  }
+}
