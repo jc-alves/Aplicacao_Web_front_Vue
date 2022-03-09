@@ -45,7 +45,7 @@
 
 
 <script>
-
+export const baseURL = process.env.VUE_APP_SERVER
 
 
 export default {
@@ -65,7 +65,7 @@ export default {
                   const self = this
                   
 
-                  fetch('https://api-rcc.herokuapp.com/buscap/'+ nome, {
+                  fetch(baseURL+'/buscap/'+ nome, {
                      headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`]
                     ])

@@ -48,6 +48,8 @@
 </template>
 
 <script>
+export const baseURL = process.env.VUE_APP_SERVER
+
 export default {
     data() {
         return {
@@ -67,7 +69,7 @@ export default {
                   const self = this
                   
 
-                  fetch('https://api-rcc.herokuapp.com/grupos', {
+                  fetch(baseURL+'/grupos', {
                         headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`]
                         ] )
@@ -91,7 +93,7 @@ export default {
             
             const self = this
 
-            fetch('https://api-rcc.herokuapp.com/payment', {
+            fetch(baseURL+'/payment', {
                 method: 'POST',
              
                       headers: new Headers([

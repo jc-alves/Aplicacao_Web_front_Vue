@@ -1,5 +1,7 @@
-export const baseURL = 'https://api-rcc.herokuapp.com//auth/login';
-export const userCredential = 'https://api-rcc.herokuapp.com//auth/login'
+
+export const baseURL = process.env.VUE_APP_SERVER
+export const userCredential = process.env.VUE_APP_AUTH
+
 
 function getHeaders () {
   const token = localStorage.getItem('token');

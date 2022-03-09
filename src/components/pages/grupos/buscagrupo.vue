@@ -27,6 +27,7 @@
 </template>
 
 <script>
+export const baseURL = process.env.VUE_APP_SERVER
 
 export default {
     name: "buscagrupo",
@@ -53,7 +54,7 @@ export default {
                   const self = this
                   
 
-                  fetch('https://api-rcc.herokuapp.com/grupos', {
+                  fetch(baseURL+'/grupos', {
                             headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`],
                     ['Content-Type', 'application/json']
@@ -80,7 +81,7 @@ export default {
             
            if (confirm('Deseja realemtne remover...? ' )) {
                 const self = this            
-                fetch('https://api-rcc.herokuapp.com/grupos/' +id, 
+                fetch(baseURL+'/grupos/' +id, 
                     {
                         method: 'DELETE',
                              headers: new Headers([

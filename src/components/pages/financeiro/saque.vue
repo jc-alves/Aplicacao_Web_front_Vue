@@ -19,6 +19,8 @@
 </template>
 
 <script>
+export const baseURL = process.env.VUE_APP_SERVER
+
 export default {
     name: 'Saque',
     
@@ -41,7 +43,7 @@ export default {
         save () {
             const self = this
            
-            fetch('https://api-rcc.herokuapp.com/retirada', {
+            fetch(baseURL+'/retirada', {
                 method: 'POST',
                  headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`],

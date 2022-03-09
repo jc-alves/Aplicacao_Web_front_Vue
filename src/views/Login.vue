@@ -30,7 +30,7 @@
 <script >
 
 
-import global from '../global'
+import global from '../components/auth/global'
 import axios from 'axios'
 
 export default {

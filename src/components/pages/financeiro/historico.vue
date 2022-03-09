@@ -46,6 +46,7 @@
 
 
 <script>
+export const baseURL = process.env.VUE_APP_SERVER
 
 export default {
     name: 'Historico',
@@ -67,7 +68,7 @@ export default {
                   const self = this
                   
 
-                  fetch('https://api-rcc.herokuapp.com/extract', {
+                  fetch(baseURL+'/extract', {
                      headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`]
                 ]),

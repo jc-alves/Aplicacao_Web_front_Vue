@@ -20,7 +20,7 @@
 </template>
 
 <script>
-
+export const baseURL = process.env.VUE_APP_SERVER
 
 export default {
     name: "novogrupo",
@@ -47,7 +47,7 @@ export default {
             
             const self = this
 
-            fetch('https://api-rcc.herokuapp.com/grupos', {
+            fetch(baseURL+'/grupos', {
                 method: 'POST',
                     headers: new Headers([                       
                     ['Authorization', `Bearer ${ localStorage.toke}`],              

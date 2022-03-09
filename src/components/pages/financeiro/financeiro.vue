@@ -18,6 +18,7 @@
     
     
 <script>
+export const baseURL = process.env.VUE_APP_SERVER
 
 export default {
     name: 'Financeiro',
@@ -33,7 +34,7 @@ export default {
                   const self = this
                  
 
-                  fetch('https://api-rcc.herokuapp.com/saldo',{
+                  fetch(baseURL+'/saldo',{
                        headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`]
                 ]),

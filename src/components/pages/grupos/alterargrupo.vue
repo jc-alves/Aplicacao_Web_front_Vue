@@ -20,7 +20,7 @@
 
 
 <script>
-
+export const baseURL = process.env.VUE_APP_SERVER
 
 
 export default {
@@ -46,7 +46,7 @@ export default {
         const id = this.$route.query.grupo
         const self = this
 
-        fetch(`https://api-rcc.herokuapp.com/grupos/${id}`, {
+        fetch(baseURL+`/grupos/${id}`, {
                  headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`],
                     ['Content-Type', 'application/json']
@@ -76,7 +76,7 @@ export default {
                  const self = this  
            if (confirm( 'Deseja realmente alter o grupo ' + this.nome + '?')) {
                          
-                fetch(`https://api-rcc.herokuapp.com/grupos/${id}` , 
+                fetch(baseURL+`/grupos/${id}` , 
                     {
                         method: 'PUT',
                              headers: new Headers([

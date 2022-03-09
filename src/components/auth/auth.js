@@ -1,5 +1,5 @@
 import decode from 'jwt-decode';
-import request from 'global';
+import request from '../auth/global';
 
 export async function signIn (email, senha) {
   const { toke } = await request('POST', '/auth/login', {
