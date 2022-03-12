@@ -23,10 +23,11 @@
             
             <tr v-for="financeiro in listaPag" :key="financeiro.id">    
                 <td>{{ financeiro.id }}</td>
-                <td>{{ financeiro.nome }}</td>
-                <td style="color: blue;">{{ financeiro.entrada ? `R$ ${financeiro.entrada}` : '---' }}</td>
+                <td style="color: blue;">{{ financeiro.nome ? ` ${financeiro.nome}` : 'Eventos / Congressos / Despesas' }}</td>
+               
+                <td style="color: blue;">{{ financeiro.entrada ? `R$ ${financeiro.entrada}` : ' ' }}</td>
                 <td >{{ financeiro.datapag ? (new Date(financeiro.datapag)).toLocaleDateString('pt-BR') : '' }}</td> 
-                <td style="color: red;" >{{  financeiro.retirada ? `R$ ${financeiro.retirada}` : '---'   }}</td> 
+                <td style="color: red;" >{{  financeiro.retirada ? `R$ ${financeiro.retirada}` : ' '   }}</td> 
                 <td>{{ financeiro.motivo }}</td>
               
               
