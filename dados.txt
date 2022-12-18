@@ -1,0 +1,3 @@
+ ---_APP_SERVER=https://api-rcc.herokuapp.com
+
+ --_APP_AUTH=https://api-rcc.herokuapp.com/auth/login 

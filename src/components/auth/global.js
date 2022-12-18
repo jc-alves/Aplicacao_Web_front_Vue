@@ -1,6 +1,6 @@
 
-export const baseURL = process.env.VUE_APP_SERVER
-export const userCredential = process.env.VUE_APP_AUTH
+export const baseURL = 'http://localhost:3000'
+export const userCredential = 'http://localhost:3000/auth/login'
 
 
 function getHeaders () {

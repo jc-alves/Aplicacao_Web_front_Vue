@@ -1,6 +1,6 @@
 <template>
     
-<main>
+<main id="main">
   
          
      
@@ -27,7 +27,7 @@
 
 </template>
 
-<script >
+<script>
 
 
 import global from '../components/auth/global'
@@ -37,8 +37,9 @@ export default {
     name: 'login',
     data() {
         return {
-           email: '',
-           senha: ''
+           email: 'j.claudio.alves@hotmail.com',
+           senha: '123456',
+           nome: ''
         }
     },
     methods: {
@@ -47,26 +48,30 @@ export default {
          try {
              const response = await axios.post(global.userCredential, {
               email: this.email,
-              senha: this.senha              
+              senha: this.senha,              
               })
-              localStorage.setItem('toke', response.data.toke)  
-            //    <router-link to="/usuarios"></router-link>                    
+              localStorage.setItem('toke', response.data.toke) 
+              localStorage.setItem('nome', response.data.nome)
+              console.log(response.data.nome)
+          
+             
+              
+                
               this.$router.push('/home')
          } catch {
              alert('Erro na autenticação!')
          }
-          
-
-          
+    
        }
-       
-      
+    
     }
 }
 
 </script>
 
 <style scoped> 
+
+
 body{
     background-color: #ffffff;
 }

@@ -10,14 +10,19 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.20.0",
     "axios": "^0.26.0",
-    "bootstrap-vue": "^2.21.2",
+    "bootstrap": "^5.2.2",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^3.6.5",
     "fix": "^0.0.6",
     "global": "^4.4.0",
     "jwt-decode": "^3.1.2",
     "moment": "^2.29.1",
-    "vue": "^3.0.0",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.18.1",
+    "rm": "^0.1.8",
+    "vue": "^3.2.41",
     "vue-router": "^4.0.0-0",
+    "vue3-simple-typeahead": "^1.0.11",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {

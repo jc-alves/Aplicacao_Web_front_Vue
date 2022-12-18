@@ -1,23 +1,54 @@
 <template>
    <div id="nav">
-       <div class="head">
-   
-         <div class="logo"><img src="../img/logorcc.png" alt="">
-         </div>  
-         
-      
-         </div>
-      
-        
+        <div class="usuario">
+       
+
+<p>{{nome}} <i class="pi pi-user"  /> </p> 
+<p @click="outSubmit" class="pi pi-sign-out" ></p>
+ 
+    </div>
+
+              
     </div>
 
 </template>
 
 <script>
-
+import { signOut } from './auth/auth'
 
 export default {
     name: 'Navbar',
+
+    data () {
+    return {
+      nome: '',
+   
+    }
+  
+  },
+    mounted () {                    
+                 const user = localStorage
+                 const self = this              
+        fetch(localStorage)
+         
+        .then(() => {
+            self.nome = user.nome,
+            console.log("deu certo")
+       
+             
+         
+        }).catch((error) => {
+            console.error(error)
+            console.log("erro esta aqui", nome)
+        })
+           
+     },
+     methods: {
+      async outSubmit () {
+        await signOut();
+        this.$router.push('/');
+      }
+    }
 
 
 }
@@ -28,50 +59,13 @@ export default {
 
 <style scoped>
 
-.head {
- display: inline-block;
-  width: 100px;
-    height: 100px;
+.usuario {
+  font-size: 1.1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: end;
+  text-transform: uppercase;
+  color: 	#A9A9A9;
 }
 
-#nav {
-    background: rgb(235, 235, 243);
-    color: white;
-        font-size: 25px;
-    height: 115px;
-    left: 0%;
-    position: absolute;
-    width: 100%;
-    margin-top: 0%;    
-}
-
-.logo {
-    
-  margin-top: 10px;
-  display: inline-block;
-  height: 80px;
-  width: 150px;
-
-  
-
-}
-
-.cads {
-  
-  
-  height: 90%;
-  width: 100%;
-  display: inline-block;
-}
-.cad {
-    margin-left: 80px;
-    padding: 15px;
-    display: inline-block;
-    height: 100px;
-    width: 250px;
-    border-radius: 5px;   
-    background-color: rgb(246, 246, 250);
-
-}
 
 </style>

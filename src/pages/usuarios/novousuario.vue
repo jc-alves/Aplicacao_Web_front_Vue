@@ -49,13 +49,14 @@ export default {
 
     methods: {
         
+        
         save () {           
 
             const senha = this.senha
             const confirsenha = this.confirsenha                   
             const self = this
             if (senha == confirsenha) {
-                fetch('https://api-rcc.herokuapp.com/newuser', {
+                fetch('http://localhost:3000/newuser', {
                 method: 'POST',
                  headers: new Headers([
                     ['Authorization', `Bearer ${ localStorage.toke}`],
@@ -88,7 +89,6 @@ export default {
             
         },
     }
-
 
 }
 </script>

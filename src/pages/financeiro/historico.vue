@@ -30,10 +30,7 @@
                 <td style="color: red;" >{{  financeiro.retirada ? `R$ ${financeiro.retirada}` : ' '   }}</td> 
                 <td>{{ financeiro.motivo }}</td>
               
-              
-
-                
-               
+       
                 
             </tr>
             

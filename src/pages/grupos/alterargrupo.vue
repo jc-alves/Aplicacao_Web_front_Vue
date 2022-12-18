@@ -13,7 +13,8 @@
            <br> 
                 <button type="submit" >Salvar</button>
             <br> <br> <br> <br> <br>  
-        </form>     
+        </form>   
+  
 
     </div>       
 </template>
@@ -28,6 +29,7 @@ export default {
 
     data () {
         return {
+         
             id: '',
             nome: '',
             diocese: '',
@@ -43,6 +45,8 @@ export default {
     },
 
     mounted () {
+       
+
         const id = this.$route.query.grupo
         const self = this
 
